@@ -1,22 +1,38 @@
----
+# Stereo Vision Assignment
 
-## 🧠 Pipeline Steps
+## Project Overview
 
-The project follows these main steps:
-
-1. Loading and displaying stereo image pair
-2. Converting images to grayscale
-3. Detecting feature points using SIFT
-4. Matching features between images
-5. Estimating the fundamental matrix using RANSAC
-6. Computing epipolar geometry
-7. Performing image rectification
-8. Computing disparity map
-9. Generating depth (stereo) map
+This project builds a stereo vision pipeline using two images captured from slightly different viewpoints to estimate depth.
 
 ---
 
-## 🛠️ Technologies Used
+## Project Structure
+
+STEREOVISIONASSIGNMENT/
+
+- data/
+  - left.png
+  - right.png
+- stereo.ipynb
+- README.md
+
+---
+
+## Pipeline Steps
+
+1. Load stereo images
+2. Convert to grayscale
+3. Detect features (SIFT)
+4. Match features
+5. Compute Fundamental Matrix
+6. Epipolar geometry
+7. Image rectification
+8. Disparity map
+9. Depth visualization
+
+---
+
+## Tools Used
 
 - Python
 - OpenCV
@@ -26,38 +42,30 @@ The project follows these main steps:
 
 ---
 
-## 📷 Input Images
+## Input Images
 
-The input images are:
+Two images of the same static scene:
 
-- `left.png`
-- `right.png`
+- left.png
+- right.png
 
-They represent the same scene captured from slightly different viewpoints with minimal camera rotation and no moving objects.
+Captured from slightly different horizontal viewpoints.
 
 ---
 
-## 📊 Output
+## Output
 
-The pipeline produces:
-
-- Feature matching visualization
-- Epipolar geometry visualization
-- Rectified stereo images
+- Feature matching result
+- Epipolar lines
+- Rectified images
 - Disparity map
-- Depth visualization map
+- Depth map
 
 ---
 
-## 🎯 Key Idea
+## Key Idea
 
-Disparity between corresponding points in the two images is used to estimate depth:
+Disparity between matching points is used to estimate depth:
 
-- Higher disparity → closer object
-- Lower disparity → farther object
-
----
-
-## 👩‍💻 Author
-
-Student Assignment — Computer Vision and Neural Networks
+- Higher disparity → closer objects
+- Lower disparity → farther objects
